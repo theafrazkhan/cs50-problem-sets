@@ -1,0 +1,34 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // TODO: Prompt for start size
+    int x = 0;
+    int starting_population, ending_population;
+
+    do
+    {
+        starting_population = get_int("enter starting population size: ");
+    }
+    while (starting_population < 9);
+
+    // TODO: Prompt for end size
+
+    do
+    {
+        ending_population = get_int("enter the ending population: ");
+    }
+    while (ending_population < starting_population);
+
+    // TODO: Calculate number of years until we reach thresho
+
+    while (starting_population < ending_population)
+    {
+        starting_population = starting_population + starting_population / 3 - starting_population / 4;
+        x += 1;
+    }
+    // TODO: Print number of years
+
+    printf("Years: %i\n", x);
+}
